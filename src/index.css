@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 142 52% 96%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 100% 33%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 120 25% 60%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 120 16% 90%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 120 25% 75%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 142 30% 85%;
+    --input: 142 30% 85%;
+    --ring: 142 100% 33%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 120 16% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 142 100% 33%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 120 25% 96%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 120 16% 91%;
+    --sidebar-ring: 142 76.2% 48%;
+  }
+
+  .dark {
+    --background: 142 30% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 142 30% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 142 30% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 70% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 120 30% 30%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 120 30% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 120 30% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 30% 20%;
+    --input: 120 30% 20%;
+    --ring: 142 76.2% 60%;
+
+    --sidebar-background: 142 30% 15%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 142 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 30% 20%;
+    --sidebar-accent-foreground: 120 20% 95%;
+    --sidebar-border: 142 30% 20%;
+    --sidebar-ring: 142 76.2% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .logo-text {
+    @apply relative inline-block font-bold text-transparent bg-clip-text bg-gradient-green;
+  }
+  
+  .logo-text-ck {
+    @apply text-emerald font-extrabold;
+  }
+  
+  
+  .product-card {
+    @apply relative overflow-hidden rounded-lg bg-white dark:bg-forest-dark shadow-md transition-all duration-300 hover:shadow-lg border border-border;
+  }
+  
+  .product-badge {
+    @apply absolute top-2 right-2 px-2 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .product-badge-new {
+    @apply bg-emerald-500 text-white;
+  }
+  
+  .product-badge-sale {
+    @apply bg-status-warning text-neutral-dark;
+  }
+  
+  .product-badge-out {
+    @apply bg-status-error text-white;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden bg-muted/50;
+  }
+  
+  .shimmer::after {
+    @apply absolute inset-0 -translate-x-full;
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    content: '';
+    animation: shimmer 2s infinite;
+  }
+}
